@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request
+import requests
+import json
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -10,8 +13,12 @@ def index():
 @app.route("/register", methods=['POST','GET'])
 def register():
 	if request.method=='POST':
-		first_name=request.form['first_name']
-		return render_template('user_details.html', first_name=first_name)
+		url=request.form['url']
+		post_url = 'https://www.googleapis.com/urlshortener/v1/url?key={}'.format('')
+		payload = {'longUrl': url}
+		headers = {'content-type': 'application/json'}
+		cevap = requests.post(post_url, data=json.dumps(payload), headers=headers)
+		return render_template('user_details.html',cevap=cevap)  
 	else:
 		return render_template('register.html')
 
