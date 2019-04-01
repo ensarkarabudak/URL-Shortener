@@ -17,19 +17,14 @@
 	<div class="container mt-5 lign-items-center justify-content-center">
 		<div class="row align-items-center h-100">
 			<div class="col-3 mx-auto">
-				<div class="text-center">
-					<form method="POST" action="/" class="form-signin">
-						
-						<br><br><br><br><br>
-						<h3>URL Shortener</h3>
-						<br>
-						<input  type="text" name="url"  class="form-control form-group" placeholder="URL" required autofocus>
-						<button class="btn btn-lg btn-success btn-block btn-signin" name="submit" type="submit">Kısalt</button>
-					
-					</form>
+				<div class="text-center">						
+						<br><br><br><br><br><br><br>
+						<h2><a href="{{ cevap['id'] }}">{{ cevap['id'] }}</a> </h2>
+						<br><br>
+						<button class="btn btn-lg btn-warning btn-block"><a href="/">Geri</a></button>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 </body>
 </html>
